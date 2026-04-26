@@ -1,0 +1,172 @@
+/* ==== RESET ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* ==== COLOR VARIABLES ==== */
+:root {
+  --bg: #262626;
+  --text: #bfbfbf;
+  --label: #888888;
+  --toggle-bg: transparent;
+  --toggle-color: var(--text);
+}
+
+html.light {
+  --bg: #ffffff;
+  --text: #131d2d;
+  --label: #b0b5b9;
+  --toggle-bg: #131d2d;
+  --toggle-color: #ffffff;
+}
+
+html.dark {
+  --bg: #262626;
+  --text: #bfbfbf;
+  --label: #888888;
+  --toggle-bg: transparent;
+  --toggle-color: var(--text);
+}
+
+/* ==== LAYOUT ==== */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: "Inter", "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==== THEME BUTTON ==== */
+#theme-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  border: none;
+  border-radius: 50%;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+#theme-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+#theme-icon {
+  font-size: 1.25rem;
+}
+
+/* ==== AGE DISPLAY ==== */
+.age-label {
+  color: var(--label);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.count {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.count sup {
+  font-size: 2.4rem;
+  margin-left: 6px;
+}
+
+/* ==== FORM ==== */
+#choose {
+  text-align: center;
+}
+
+#choose footer {
+  margin-top: 0.75rem;
+}
+
+input[type="date"] {
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+button {
+  background: #00c060;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ==== BACK LINK ==== */
+.home-link {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  color: var(--label);
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .count {
+    font-size: 4rem;
+  }
+
+  .count sup {
+    font-size: 1.7rem;
+  }
+
+  input[type="date"] {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.75rem;
+  }
+
+  #submit {
+    width: 100%;
+  }
+}

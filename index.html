@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IXARI</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <style>
+      body {
+        top: 0;
+        left: 0;
+        width: 99%;
+        min-height: 97%;
+        position: absolute;
+        display: table;
+        font-family: "Times New Roman", Times, serif;
+        background: #fff;
+        color: #000;
+      }
+
+      main {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 24px;
+      }
+
+      a {
+        color: #0000ee;
+      }
+
+      #timezone * {
+        text-decoration: none;
+      }
+
+      .name {
+        font-size: 64px;
+        font-style: italic;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        width: 560px;
+        max-width: 90vw;
+        height: auto;
+        border: 0;
+      }
+
+      @media (max-width: 600px) {
+        .name {
+          font-size: 44px;
+        }
+      }
+    </style>
+    <script>
+      const options = {
+        timeZone: "Europe/London",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      };
+
+      const formatter = new Intl.DateTimeFormat([], options);
+
+      function setTime() {
+        const timeEl = document.querySelector("#time");
+
+        if (timeEl) {
+          timeEl.innerText = formatter.format(new Date());
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        setTime();
+        setInterval(setTime, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="name">IXARI</div>
+
+      <br />
+
+      <img
+        class="hero"
+        src="assets/images/ixari-placeholder.svg"
+        alt="IXARI homepage image"
+      />
+
+      <br /><br />
+
+      <span id="timezone">
+        <i>TIME IN PLYMOUTH - <span id="time">0:00 PM</span> GMT/BST</i>
+      </span>
+
+      <br /><br />
+
+      <a href="about.html">about</a> // <a href="faq.html">faq</a> //
+      <a href="blog/index.html">blog</a> //
+      <a href="projects.html">projects</a> //
+      <a href="resume.html">resume</a> //
+      <a href="contact.html">contact</a>
+    </main>
+  </body>
+</html>

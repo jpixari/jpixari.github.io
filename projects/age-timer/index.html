@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Real-Time Age Timer - IXARI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("age-theme") || "dark";
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+
+    <link
+      rel="icon"
+      href="../../assets/icons/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="age.css" />
+    <script defer src="age.js"></script>
+  </head>
+
+  <body>
+    <button id="theme-btn" aria-label="Toggle theme">
+      <span id="theme-icon">☀</span>
+    </button>
+
+    <form id="choose" style="display: none">
+      <h1 class="age-label">When were you born?</h1>
+      <footer>
+        <input type="date" id="dob-input" required />
+        <button id="submit">Start</button>
+      </footer>
+    </form>
+
+    <div id="timer" style="display: none">
+      <h1 class="age-label">AGE</h1>
+      <h2 class="count" id="age"></h2>
+    </div>
+
+    <a class="home-link" href="../../projects.html">back</a>
+  </body>
+</html>
