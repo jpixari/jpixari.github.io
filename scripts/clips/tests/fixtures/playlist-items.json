@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "snippet": {
+        "title": "1v5 clutch on Ascent",
+        "description": "insane round",
+        "publishedAt": "2026-07-20T10:00:00Z",
+        "resourceId": { "videoId": "aaaaaaaaaaa" },
+        "thumbnails": {
+          "medium": { "url": "https://i.ytimg.com/vi/aaaaaaaaaaa/mqdefault.jpg" },
+          "maxres": { "url": "https://i.ytimg.com/vi/aaaaaaaaaaa/maxresdefault.jpg" }
+        }
+      },
+      "contentDetails": { "videoPublishedAt": "2026-07-28T19:04:11Z" }
+    },
+    {
+      "snippet": {
+        "title": "Private video",
+        "description": "This video is private.",
+        "publishedAt": "2026-07-25T10:00:00Z",
+        "resourceId": { "videoId": "bbbbbbbbbbb" },
+        "thumbnails": {}
+      },
+      "contentDetails": {}
+    },
+    {
+      "snippet": {
+        "title": "Deleted video",
+        "description": "This video is unavailable.",
+        "publishedAt": "2026-07-26T10:00:00Z",
+        "resourceId": { "videoId": "ccccccccccc" },
+        "thumbnails": {}
+      },
+      "contentDetails": {}
+    },
+    {
+      "snippet": {
+        "title": "ceiling shot into double touch",
+        "description": "",
+        "publishedAt": "2026-07-01T10:00:00Z",
+        "resourceId": { "videoId": "ddddddddddd" },
+        "thumbnails": {
+          "default": { "url": "https://i.ytimg.com/vi/ddddddddddd/default.jpg" },
+          "high": { "url": "https://i.ytimg.com/vi/ddddddddddd/hqdefault.jpg" }
+        }
+      },
+      "contentDetails": { "videoPublishedAt": "2026-07-26T08:00:00Z" }
+    }
+  ]
+}
