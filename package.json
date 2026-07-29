@@ -1,0 +1,10 @@
+{
+  "name": "jpixari-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"scripts/clips/tests/**/*.test.mjs\"",
+    "clips": "node scripts/clips/build.mjs",
+    "clips:dry": "node scripts/clips/build.mjs --dry-run"
+  }
+}
