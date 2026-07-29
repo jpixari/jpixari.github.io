@@ -19,6 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Push as the repo owner rather than github-actions[bot], so the
+          # commit counts as repository activity. GitHub disables scheduled
+          # workflows in public repos after 60 days without it.
+          # Falls back to the default token if the secret is absent or removed,
+          # so the build keeps working either way.
+          token: ${{ secrets.CLIPS_PUSH_TOKEN || github.token }}
 
       - uses: actions/setup-node@v4
         with:
