@@ -45,8 +45,11 @@ jobs:
             echo "No changes."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Author as the repo owner, not the bot, so the commit itself counts
+          # as repository activity and not just the push. The noreply address
+          # is one GitHub links to the account, so attribution still works.
+          git config user.name "jpixari"
+          git config user.email "242635535+jpixari@users.noreply.github.com"
           git add clips
           git commit -m "Update clips gallery"
           git push
