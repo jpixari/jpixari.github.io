@@ -1,0 +1,45 @@
+name: Build clips gallery
+
+on:
+  schedule:
+    # Every 30 minutes. Scheduled runs are best-effort and can be delayed.
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+# Prevent two runs racing to commit the same files.
+concurrency:
+  group: clips
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build clips
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/clips/build.mjs
+
+      - name: Commit if changed
+        run: |
+          if [ -z "$(git status --porcelain clips)" ]; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add clips
+          git commit -m "Update clips gallery"
+          git push
