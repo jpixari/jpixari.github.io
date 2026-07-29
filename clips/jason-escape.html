@@ -3,8 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index of /clips - IXARI</title>
+    <title>jason escape - IXARI</title>
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:title" content="jason escape" />
+    <meta property="og:description" content="jason escape" />
+    <meta property="og:url" content="https://jpixari.github.io/clips/jason-escape.html" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:site_name" content="IXARI" />
+    <meta property="og:image" content="https://i.ytimg.com/vi/XHXv4VSqJ2Q/maxresdefault.jpg" />
+    <meta property="og:video:url" content="https://www.youtube-nocookie.com/embed/XHXv4VSqJ2Q" />
+    <meta property="og:video:secure_url" content="https://www.youtube-nocookie.com/embed/XHXv4VSqJ2Q" />
+    <meta property="og:video:type" content="text/html" />
+    <meta property="og:video:width" content="1280" />
+    <meta property="og:video:height" content="720" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="jason escape" />
+    <meta name="twitter:image" content="https://i.ytimg.com/vi/XHXv4VSqJ2Q/maxresdefault.jpg" />
+
     <style>
       body {
         font-family:
@@ -103,38 +119,58 @@
         font-size: 12px;
         border-top: 1px solid #eee;
       }
+
+      .player {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-color: #000;
+      }
+
+      .player iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .meta {
+        padding: 12px 20px;
+        color: #6e6e6e;
+        font-size: 13px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .description {
+        padding: 16px 20px;
+        white-space: pre-wrap;
+        border-bottom: 1px solid #eee;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h1>Index of /clips</h1>
+        <h1>jason escape</h1>
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 60%">Clip</th>
-            <th style="width: 15%">Duration</th>
-            <th style="width: 25%">Date</th>
-          </tr>
-        </thead>
+      <div class="player">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/XHXv4VSqJ2Q"
+          title="jason escape"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
 
-        <tbody>
-          <tr>
-            <td>
-              <div class="clip-cell">
-                <img class="thumb" src="https://i.ytimg.com/vi/XHXv4VSqJ2Q/mqdefault.jpg" alt="" loading="lazy" width="64" height="36" />
-                <a href="jason-escape.html">jason escape</a>
-              </div>
-            </td>
-            <td>4:02</td>
-            <td>29-Jul-2026</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="meta">29-Jul-2026 &middot; 4:02</div>
 
-      <div class="footer">1 clip &middot; <a href="../index.html">home</a></div>
+      <div class="footer">
+        <a href="index.html">&larr; Index of /clips</a> &middot;
+        <a href="../index.html">home</a>
+      </div>
     </div>
   </body>
 </html>
