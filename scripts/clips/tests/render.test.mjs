@@ -87,9 +87,19 @@ test("renderClip escapes the description inside og:description", () => {
   assert.match(html, /content="he said &quot;gg&quot; &amp; left"/);
 });
 
-test("renderClip uses the title for og:description when there is no description", () => {
+test("renderClip falls back to duration and date for og:description", () => {
+  // Falling back to the title made the Discord card repeat itself: the title
+  // appeared as both the heading and the description line.
   const html = renderClip({ ...clip, description: "" });
-  assert.match(html, /<meta property="og:description" content="1v5 clutch on Ascent"\s*\/>/);
+  assert.match(
+    html,
+    /<meta property="og:description" content="0:14 · 28-Jul-2026"\s*\/>/,
+  );
+});
+
+test("renderClip still prefers a real description over the fallback", () => {
+  const html = renderClip({ ...clip, description: "insane round\nsecond line" });
+  assert.match(html, /<meta property="og:description" content="insane round"\s*\/>/);
 });
 
 test("renderClip preserves description line breaks in the body", () => {

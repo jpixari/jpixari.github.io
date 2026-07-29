@@ -206,8 +206,12 @@ export function renderClip(clip) {
     ? `      <div class="description">${escapeHtml(clip.description).replace(/\n/g, "<br />\n")}</div>\n\n`
     : "";
 
+  // Falling back to the title would make the link preview card repeat itself,
+  // since the title is already the card's heading.
   const ogDescription = escapeHtml(
-    clip.description ? clip.description.split("\n")[0] : clip.title,
+    clip.description
+      ? clip.description.split("\n")[0]
+      : `${formatDuration(clip.duration)} · ${formatDate(clip.publishedAt)}`,
   );
 
   return `<!doctype html>
